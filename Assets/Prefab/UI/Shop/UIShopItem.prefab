@@ -788,5 +788,7 @@ MonoBehaviour:
   _buyButtonBackground: {fileID: 1281618824132119792}
   _icon: {fileID: 5065480724682135963}
   _buyButton: {fileID: 6445507885760975487}
+  _defaultCostColor: {r: 1, g: 1, b: 1, a: 1}
   _disabledButtonCostColor: {r: 1, g: 0, b: 0.098039225, a: 1}
+  _defaultButtonSprite: {fileID: 21300000, guid: 68dc8ec756bcf5e4b98302a9c7225ac8, type: 3}
   _disabledButtonSprite: {fileID: 21300000, guid: caf248dd27e22d1428f3768d08e122bb, type: 3}

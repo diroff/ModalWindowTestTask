@@ -15,13 +15,13 @@ public class UIShopItem : MonoBehaviour
     [SerializeField] private Button _buyButton;
 
     [Header("Disabled button settings")]
+    [SerializeField] private Color _defaultCostColor;
     [SerializeField] private Color _disabledButtonCostColor;
+
+    [SerializeField] private Sprite _defaultButtonSprite;
     [SerializeField] private Sprite _disabledButtonSprite;
 
     public ShopItem ShopItem { get; private set; }
-
-    private Color _defaultCostColor;
-    private Sprite _defaultButtonSprite;
 
     private void Awake()
     {
