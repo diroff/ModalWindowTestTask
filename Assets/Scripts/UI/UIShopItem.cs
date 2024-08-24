@@ -4,14 +4,30 @@ using UnityEngine.UI;
 
 public class UIShopItem : MonoBehaviour
 {
+    [Header("Text fields")]
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _descriptionText;
     [SerializeField] private TextMeshProUGUI _cost;
 
+    [Header("Other elements")]
+    [SerializeField] private Image _buyButtonBackground;
     [SerializeField] private Image _icon;
     [SerializeField] private Button _buyButton;
 
+    [Header("Disabled button settings")]
+    [SerializeField] private Color _disabledButtonCostColor;
+    [SerializeField] private Sprite _disabledButtonSprite;
+
     public ShopItem ShopItem { get; private set; }
+
+    private Color _defaultCostColor;
+    private Sprite _defaultButtonSprite;
+
+    private void Awake()
+    {
+        _defaultCostColor = _cost.color;
+        _defaultButtonSprite = _buyButtonBackground.sprite;
+    }
 
     private void OnEnable()
     {
@@ -37,6 +53,9 @@ public class UIShopItem : MonoBehaviour
     public void SetBuyButtonState(bool enabled)
     {
         _buyButton.interactable = enabled;
+
+        _cost.color = enabled? _defaultCostColor: _disabledButtonCostColor;
+        _buyButtonBackground.sprite = enabled? _defaultButtonSprite: _disabledButtonSprite;
     }
 
     private void UpdateItemInfo()

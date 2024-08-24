@@ -446,7 +446,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -632,13 +632,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 30.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -714,7 +714,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 650, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &376097651149523472
 CanvasRenderer:
@@ -769,5 +769,8 @@ MonoBehaviour:
   _titleText: {fileID: 6124114566294294774}
   _descriptionText: {fileID: 8379188471246330024}
   _cost: {fileID: 2024605194029249927}
+  _buyButtonBackground: {fileID: 1281618824132119792}
   _icon: {fileID: 5065480724682135963}
   _buyButton: {fileID: 6445507885760975487}
+  _disabledButtonCostColor: {r: 1, g: 0, b: 0.098039225, a: 1}
+  _disabledButtonSprite: {fileID: 21300000, guid: caf248dd27e22d1428f3768d08e122bb, type: 3}
