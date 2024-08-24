@@ -2329,6 +2329,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06abf7d223e29ff42b058698ec615268, type: 3}
+--- !u!1 &2129689118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129689120}
+  - component: {fileID: 2129689119}
+  m_Layer: 0
+  m_Name: Shop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2129689119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129689118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c040cbb10dc25b04b8c63b07c8a66cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _availableItems:
+  - {fileID: 11400000, guid: e91ddcac75b1f554fb23e4f3d8579ec5, type: 2}
+  - {fileID: 11400000, guid: be6ab717520bbfa4faa2df03b1de0b93, type: 2}
+  - {fileID: 11400000, guid: e8c2e8ee3158eba42a451fccc12a8229, type: 2}
+  - {fileID: 11400000, guid: 413badeaa71d3ec4e9b50ff46a52fef2, type: 2}
+  - {fileID: 11400000, guid: 2e7cf91bc7d5154428615ce7b2907b6d, type: 2}
+  - {fileID: 11400000, guid: faa661918b0585541a9695167e9a264f, type: 2}
+--- !u!4 &2129689120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129689118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2139521818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,3 +2625,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1647356213}
   - {fileID: 1856488006}
+  - {fileID: 2129689120}
