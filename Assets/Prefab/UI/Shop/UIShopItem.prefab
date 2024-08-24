@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 1206575541910277208}
   - component: {fileID: 1281618824132119792}
   - component: {fileID: 6445507885760975487}
+  - component: {fileID: 1261197539037860105}
   m_Layer: 5
   m_Name: UIShopBuyButton
   m_TagString: Untagged
@@ -465,6 +466,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1261197539037860105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831025143248990423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f205f50a280fc834da568d85775a58be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pressedSprite: {fileID: 21300000, guid: fe4cf67b90d15d04296ae7a6c08d2b4b, type: 3}
+  _image: {fileID: 1281618824132119792}
+  _button: {fileID: 6445507885760975487}
 --- !u!1 &8042865991381118926
 GameObject:
   m_ObjectHideFlags: 0
