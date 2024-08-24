@@ -10,12 +10,12 @@ public class UIModalWindow : MonoBehaviour
         SetPanelState(_enabledOnStart);
     }
 
-    public void EnablePanel()
+    public virtual void EnablePanel()
     {
         _panel.SetActive(true);
     }
 
-    public void DisablePanel()
+    public virtual void DisablePanel()
     {
         _panel.SetActive(false);
     }
