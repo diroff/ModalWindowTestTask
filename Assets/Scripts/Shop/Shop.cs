@@ -1,31 +1,58 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Shop : MonoBehaviour
 {
     [SerializeField] private List<ItemData> _availableItems;
+    [SerializeField] private Wallet _wallet;
 
     public List<ShopItem> CurrentItemsData { get; private set; } = new List<ShopItem>();
+
+    public UnityAction ShopWasUpdated;
 
     private void Awake()
     {
         CreateShopItems();
     }
 
+    private void Start()
+    {
+        ShopWasUpdated?.Invoke();
+    }
+
     private void CreateShopItems()
     {
         foreach (ItemData item in _availableItems)
         {
-            CurrentItemsData.Add(new ShopItem(item));
+            var newItem = new ShopItem(item);
+
+            CurrentItemsData.Add(newItem);
+            newItem.ItemTryiedToBuy += OnItemTryiedToBuy;
         }
     }
 
-    [ContextMenu("Show current shop Items")]
-    public void DisplayShopItems()
+    private void OnItemTryiedToBuy(ShopItem item)
     {
-        foreach (ShopItem item in CurrentItemsData)
-        {
-            Debug.Log($"{item.ItemData.Name} - {item.ItemData.Description} - {item.ItemData.Cost}");
-        }
+        TryToBuyItem(item);
+    }
+
+    public void TryToBuyItem(ShopItem item)
+    {
+        if (!CanBuyItem(item))
+            return;
+
+        item.BuyItem();
+        item.ItemTryiedToBuy -= OnItemTryiedToBuy;
+
+        _wallet.TryToSpendCoins(item.ItemData.Cost);
+
+        ShopWasUpdated?.Invoke();
+        CurrentItemsData.Remove(item);
+    }
+
+    public bool CanBuyItem(ShopItem item)
+    {
+        return _wallet.CurrentCointCount >= item.ItemData.Cost;
     }
 }

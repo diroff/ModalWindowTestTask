@@ -9,22 +9,47 @@ public class UIShopItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _cost;
 
     [SerializeField] private Image _icon;
+    [SerializeField] private Button _buyButton;
 
-    private ShopItem _shopItem;
+    public ShopItem ShopItem { get; private set; }
+
+    private void OnEnable()
+    {
+        if (ShopItem == null)
+            return;
+
+        ShopItem.ItemWasBuyed += OnItemWasBuyed;
+    }
+
+    private void OnDisable()
+    {
+        ShopItem.ItemWasBuyed -= OnItemWasBuyed;
+    }
 
     public void SetupItemData(ShopItem shopItem)
     {
-        _shopItem = shopItem;
+        ShopItem = shopItem;
+        _buyButton.onClick.AddListener(() => ShopItem.TryToBuyItem());
 
         UpdateItemInfo();
     }
 
+    public void SetBuyButtonState(bool enabled)
+    {
+        _buyButton.interactable = enabled;
+    }
+
     private void UpdateItemInfo()
     {
-        _titleText.text = _shopItem.ItemData.Name;
-        _descriptionText.text = _shopItem.ItemData.Description;
-        _cost.text = _shopItem.ItemData.Cost.ToString();
+        _titleText.text = ShopItem.ItemData.Name;
+        _descriptionText.text = ShopItem.ItemData.Description;
+        _cost.text = ShopItem.ItemData.Cost.ToString();
 
-        _icon.sprite = _shopItem.ItemData.Sprite;
+        _icon.sprite = ShopItem.ItemData.Sprite;
+    }
+
+    private void OnItemWasBuyed()
+    {
+        Destroy(gameObject);
     }
 }

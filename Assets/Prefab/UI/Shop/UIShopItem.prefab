@@ -770,3 +770,4 @@ MonoBehaviour:
   _descriptionText: {fileID: 8379188471246330024}
   _cost: {fileID: 2024605194029249927}
   _icon: {fileID: 5065480724682135963}
+  _buyButton: {fileID: 6445507885760975487}
