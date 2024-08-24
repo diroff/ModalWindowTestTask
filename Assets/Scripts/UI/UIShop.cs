@@ -39,6 +39,11 @@ public class UIShop : MonoBehaviour
     private void OnItemWasBuyed()
     {
         foreach(var uiItem in _uiItems)
+        {
+            if (uiItem == null)
+                continue;
+            
             uiItem.SetBuyButtonState(_shop.CanBuyItem(uiItem.ShopItem));
+        }
     }
 }
