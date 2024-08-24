@@ -25,7 +25,7 @@ public class Wallet : MonoBehaviour
 
     public bool TryToSpendCoins(int coinCount)
     {
-        if(CurrentCointCount < coinCount || coinCount < 0)
+        if (CurrentCointCount < coinCount || coinCount < 0)
             return false;
 
         SpendCoins(coinCount);

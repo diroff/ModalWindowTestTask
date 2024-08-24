@@ -54,8 +54,8 @@ public class UIShopItem : MonoBehaviour
     {
         _buyButton.interactable = enabled;
 
-        _cost.color = enabled? _defaultCostColor: _disabledButtonCostColor;
-        _buyButtonBackground.sprite = enabled? _defaultButtonSprite: _disabledButtonSprite;
+        _cost.color = enabled ? _defaultCostColor : _disabledButtonCostColor;
+        _buyButtonBackground.sprite = enabled ? _defaultButtonSprite : _disabledButtonSprite;
     }
 
     private void UpdateItemInfo()
