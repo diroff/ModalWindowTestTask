@@ -42,10 +42,11 @@ public class Shop : MonoBehaviour
         if (!CanBuyItem(item))
             return;
 
+        if (!_wallet.TryToSpendCoins(item.ItemData.Cost))
+            return;
+
         item.BuyItem();
         item.ItemTryiedToBuy -= OnItemTryiedToBuy;
-
-        _wallet.TryToSpendCoins(item.ItemData.Cost);
 
         ShopWasUpdated?.Invoke();
         CurrentItemsData.Remove(item);
